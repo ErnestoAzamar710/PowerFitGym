@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+    </ion-buttons>
+    <ion-title class="text-center">Gimnasio Movil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="text-center">
+    <div class="logo">
+      <img src="../../assets/icon/MicrosoftTeams-image.png" alt="Logo">
+    </div>
+    <ion-card>
+      <div class="text-center">
+        <h4><b>Elige un tipo de ejercicio</b></h4>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['/interfaz-gimnasio-movil']" class="btn">Pecho</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['/interfaz-gimnasio-movil']" class="btn">Brazo</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['/interfaz-gimnasio-movil']" class="btn">Pierna</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['/interfaz-gimnasio-movil']" class="btn">Abdomen</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <p></p>
+      <img src="../../../assets/icon/image.png" alt="Ejercicio en casa">
+      <p></p>
+    </ion-card>
+  </div>
+</ion-content>

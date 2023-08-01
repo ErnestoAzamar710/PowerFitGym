@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="text-center">Opciones de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="text-center">
+    <h4><b>Bienvenido</b></h4>
+    <h6>{{User.nombre}}</h6>
+    <ion-row class="text-center">
+      <ion-col>
+          <ion-button class="circular-button" [routerLink]="['/ver-perfil',User.uid]"><i style="font-size: 300%;" class="fa-solid fa-user"></i></ion-button>
+        <h4>Perfil del <br>Usuario</h4>
+      </ion-col>
+      <ion-col>
+        <ion-button class="circular-button"><i style="font-size: 300%;" class="fa-solid fa-file-invoice"></i></ion-button>
+        <h4>Generar <br>PDF</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-center">
+      <ion-col>
+        <ion-button class="circular-button" [routerLink]="['/gimnasio-movil',User.uid]"><i style="font-size: 300%;" class="fa-solid fa-dumbbell"></i></ion-button>
+        <h4>GYM en<br>Casa</h4>
+      </ion-col>
+      <ion-col>
+        <ion-button class="circular-button" [routerLink]="['/generar-qr',User.uid]"><i style="font-size: 300%;" class="fa-solid fa-qrcode"></i></ion-button>
+        <h4>Generar<br>QR</h4>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

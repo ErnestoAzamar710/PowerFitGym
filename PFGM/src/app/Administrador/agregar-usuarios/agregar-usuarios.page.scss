@@ -1,0 +1,53 @@
+h1{
+    font-family: "GYM";
+    font-size: 50px;
+  }
+  ion-title{
+    font-family: tituloss;
+  }
+  
+  
+  ion-menu::part(backdrop) {
+      background-color: rgba(24, 21, 24, 0.5);
+  }
+    
+  ion-menu::part(container) {
+      border-radius: 0 20px 20px 0;
+      box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+  }
+  .logo img{
+      width: 25%;
+      height: 25%;
+  }
+  .btn{
+    width: 100%;
+  }
+  //Colores de las paginas
+  //Color de los inputs
+  ion-input{
+    background-color:#f1d9b0;
+  }
+  //fobdo del menu 
+  ion-toolbar{
+    --ion-background-color:#ff9d29;
+  }
+  //Fondo de los botones
+  ion-content button{
+    background-color:#ff9d29;
+    border-style: none;
+  }
+  //el emnu del despliegue
+  ion-menu ion-content {
+    --ion-background-color: #f1d9b0;
+  }
+  .imgUser{
+    width: 75%;
+}
+@media (min-width: 600px){
+  .imgUser{
+      width: 60%;
+  }
+  ion-card{
+      width: 65%;
+  } 
+}

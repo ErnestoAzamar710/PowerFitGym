@@ -1,0 +1,7 @@
+{
+  "name": "PFGM",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

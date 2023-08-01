@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  <div class="login text-center">
+    <div class="logo">
+      <img src="../../assets/icon/MicrosoftTeams-image.png" alt="Logo">
+      <h1>POWERFIT GYM</h1>
+    </div>
+    <div class="form">
+    <form class="formLog">
+      <div class="put">
+        <div class="inputsion">
+      <ion-input type="email" name="txtemail" label="Email" [(ngModel)]="email" label-placement="floating" fill="outline"></ion-input>
+      <br/>
+      <ion-input type="password" name="txtpassword" label="Password" [(ngModel)]="password" label-placement="floating" fill="outline"></ion-input>
+      <br/>
+    </div>
+    </div>
+      <div class="inico">
+        <button class="btn btn-primary" (click)="loginEmailPass()" type="submit">INICIAR SESION</button>
+        <p></p>
+        <div class="otro">
+        <button class="btn btn-primary" (click)="loginGoogle()" type="submit"><ion-icon name="logo-google"></ion-icon> GOOGLE</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</ion-content>

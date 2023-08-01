@@ -1,0 +1,64 @@
+.logo img{
+    width: 25%;
+    height: 25%;
+  }
+  
+  button{
+    width: 50%;
+    background-color: #ff9d29;
+    border-color: #ff9d29;
+  }
+  
+  .formLog ion-input{
+    background-color: #f1d9b0;
+  }
+  
+  //titulo
+  h1{
+    font-family: "GYM";
+  }
+  
+  .otro button{
+    background-color: white;
+    color: black;
+    border-color: black;
+  }
+   //Logo
+   .logo img{
+    width: 70%;
+    height: 70%;
+  }
+  //Titulo de los logos
+  
+
+  //Botones con inputs
+  .form{
+    padding: 20px;
+  }
+// partes de los inputs 
+  .put{
+    position: relative;
+
+  }
+  .inputsion{
+    margin: 20px;
+  }
+  .formLog ion-input{
+  width: 100%;
+  border-radius: 10px;
+  }
+
+  //Botones de session
+  button{
+    width: 90%;
+  }
+  .logo h1{
+    font-size: 40px;
+  }
+  //Modo escritorio
+   @media (min-width: 600px) {
+   .logo img{
+    width: 20%;
+    height: 20%;
+   }
+  }

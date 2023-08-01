@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+    </ion-buttons>
+    <ion-title class="text-center">Ver Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-row>
+      <ion-col size="5">
+        <img src="../../../assets/icon/585e4bd7cb11b227491c3397.png" alt="Foto Usuario">
+      </ion-col>
+      <ion-col>
+        <h3><b>Nombre:</b> {{User.nombre}}</h3>
+        <h4><b>Status:</b> {{User.estado}}</h4>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <div class="datosUsu text-center">
+      <h5><b>Email:</b> {{User.email}}</h5>
+      <h5><b>Teléfono:</b> {{User.telefono}}</h5>
+      <h5><b>Día de ingreso:</b> {{User.diaIn}}</h5>
+      <h5><b>Tipo de plan:</b> {{User.plan}}</h5>
+      <h5><b>Ultimo día hábil:</b> {{User.ulDia}}</h5>
+    </div>
+    <ion-row class="text-center">
+      <ion-col>
+        <ion-button class="circular-button" [routerLink]="['/editar-perfil',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-pen-to-square"></i></ion-button>
+        <h4>Editar <br>perfil</h4>
+      </ion-col>
+      <ion-col>
+        <div class="text-center">
+          <ion-button class="circular-button" [routerLink]="['/iniciar-sesion']"><i style="font-size: 200%;" class="fa-solid fa-right-from-bracket"></i></ion-button>
+          <h4>Cerrar <br>Session</h4>
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    
+    <p></p>
+  </ion-card>
+</ion-content>

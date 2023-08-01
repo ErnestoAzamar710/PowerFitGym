@@ -1,0 +1,56 @@
+ion-title{
+    font-family: tituloss;
+  }
+  
+  
+  ion-menu::part(backdrop) {
+      background-color: rgba(24, 21, 24, 0.5);
+    }
+    
+  ion-menu::part(container) {
+      border-radius: 0 20px 20px 0;
+      box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+  }
+  
+  //fondo de los titulos
+  ion-toolbar{
+      --ion-background-color:#ff9d29;
+  }
+  
+  //fondo del buscador
+  ion-searchbar{
+      --ion-background-color: #f1d9b0;
+  }
+  
+  //Botones del menu
+  
+  ion-content button{
+      background-color:#ff9d29 ;
+      border-style: none;
+    }
+  //fondo de las targetas
+  ion-card{
+    --ion-background-color: #f1d9b0;
+  }
+  //Fondo del menu del despliegue
+  ion-menu ion-content {
+      --ion-background-color: #f1d9b0;
+    }
+    //Color de los iconos 
+    ion-icon{
+      color: black;
+    }
+    .btn{
+      width: 100%;
+  }
+  .tarjetausu{
+      display: inline-flex;
+  }
+  .actions{
+      width: 20%;
+  }
+  //modo escritorio
+  @media (min-width: 600px) {
+
+      
+      }

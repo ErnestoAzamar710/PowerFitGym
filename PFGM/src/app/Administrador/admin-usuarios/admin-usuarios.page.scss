@@ -1,0 +1,56 @@
+ion-title{
+    font-family: tituloss;
+}
+
+ion-menu::part(backdrop) {
+    background-color: rgba(24, 21, 24, 0.5);
+  }
+  
+ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+}
+.btn{
+    width: 100%;
+}
+.tarjetausu{
+    display: inline-flex;
+}
+.actions{
+    width: 20%;
+}
+ion-menu ion-content {
+    --ion-background-color: #f1d9b0;
+  }
+  ion-content button{
+    background-color:#ff9d29 ;
+    border-style: none;
+  }
+ion-toolbar{
+    --ion-background-color:#ff9d29;
+}
+ion-searchbar{
+    --ion-background-color: #f1d9b0;
+}
+ion-icon{
+    color: black;
+}
+//fondo de las targetas
+ion-card{
+    --ion-background-color: #f1d9b0;
+  }
+ion-title{
+    color: black;
+}
+.imgUser{
+    width: 75%;
+}
+//Modo Escritorio
+@media (min-width: 600px){
+    .imgUser{
+        width: 60%;
+    }
+    ion-card{
+        width: 65%;
+    } 
+}

@@ -1,0 +1,32 @@
+ion-toolbar{
+    --ion-background-color:#ff9d29;
+}
+ion-button{
+    --background:#ffffff ;
+    margin-top: 80px;
+}
+i{
+    color: black;
+    
+}
+//color de fondo de la targeta
+ion-card{
+    background: #f1d9b0;
+}
+
+ion-button.circular-button {
+    width: 150px; /* Ajusta el ancho y alto según el tamaño que desees */
+    height: 150px;
+    --border-radius: 50%; /* Esto hace que el botón tenga forma circular */
+    --boder: 2px solid red;
+  }
+  ion-title{
+    font-family: tituloss;
+}
+
+
+
+  
+  
+
+  

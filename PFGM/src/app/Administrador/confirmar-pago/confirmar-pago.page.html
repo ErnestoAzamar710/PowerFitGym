@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Confirmar Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-row>
+      <ion-col size="5">
+        <img src="" alt="Foto Usuario">
+      </ion-col>
+      <ion-col>
+        <h3><b>Nombre:{{User.nombre}}</b> </h3>
+        <h6><b>Email:{{User.email}}</b> </h6>
+      </ion-col>
+    </ion-row>
+    <div class="option">
+      <ion-row>
+        <ion-select [(ngModel)]="selectedOption" (ionChange)="onOptionChange()" label="Seleccione el tipo de suscripción" label-placement="floating" fill="outline">
+          <ion-select-option value="DIA">DIA</ion-select-option>
+          <ion-select-option value="SEMANA">SEMANAL</ion-select-option>
+          <ion-select-option value="MENSUAL">MENSUAL</ion-select-option>
+          <ion-select-option value="ANUAL">ANUAL</ion-select-option>
+        </ion-select>
+      </ion-row>
+    </div>
+    <p></p>
+    <div class="componentes text-center">
+      <h6><b>Monto a pagar</b></h6>
+      <ion-input type="number" name="MontoPago" id="MontoPago" [(ngModel)]="selectedOptionValue" disabled></ion-input>
+      <h6><b>Monto recibido</b></h6>
+      <ion-input name="MontoRecibido" id="MontoRecibido" [(ngModel)]="MontoRecibido" type="number" label="$ 00.00" label-placement="floating" fill="outline"></ion-input>
+      <h6><b>Ultimo dia habil</b></h6>
+      <ion-input name="ultimoDia" type="date" label="Ultimo dia habil" [(ngModel)]="ultimoDia" label-placement="floating" fill="outline"></ion-input>
+      <div class="pago">
+        <button class="btn btn-primary" (click)="pagado()">REALIZAR PAGO</button>
+      </div>
+      <p></p>
+    </div>
+  </ion-card>
+</ion-content>

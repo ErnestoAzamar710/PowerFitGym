@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Administrar Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar animated="true" (ionInput)="handleInput($event)" show-clear-button="focus" placeholder="Buscar cliente"></ion-searchbar>
+      <ion-card *ngFor="let result of results">
+        <ion-row>
+          <ion-col>
+            <img class="imgUser" src="{{result.foto}}" alt="Foto Usuario">
+          </ion-col>
+          <ion-col>
+            <h5><b>Nombre:</b> {{result.nombre}}</h5>
+            <h6><b>Email:</b> {{result.email}}</h6>
+            <h6><b>Estado:</b> {{result.estado}}</h6>
+          </ion-col>
+        </ion-row>
+        <ion-card-content><b>Ultimo día hábil:</b> {{result.ulDia}}</ion-card-content>
+        <ion-row class="text-center">
+          <ion-col>
+            <ion-button fill="clear"><ion-icon style="font-size: 200%;" name="document-text-sharp"></ion-icon></ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" (click)="eliminarUsuario(result.uid)"><ion-icon style="font-size: 200%;" name="trash-sharp"></ion-icon></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+</ion-content>

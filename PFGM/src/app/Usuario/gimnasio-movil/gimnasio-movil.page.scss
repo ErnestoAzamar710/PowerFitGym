@@ -1,0 +1,45 @@
+ion-menu::part(backdrop) {
+    background-color: rgba(24, 21, 24, 0.5);
+}
+  
+ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+}
+.logo img{
+    width: 25%;
+    height: 25%;
+}
+.btn{
+  width: 100%;
+  color: white;
+}
+  
+ion-title{
+  font-family: tituloss;
+}
+
+
+//Colores de las paginas
+//Color de los inputs
+ion-card{
+  background-color:#f1d9b0;
+}
+//fobdo del menu 
+ion-toolbar{
+  --ion-background-color:#ff9d29;
+}
+//Fondo de los botones
+ion-button{
+  --background:#ff9d29;
+  border-style: none;
+}
+.logo img{
+  width: 50%;
+  height: 50%;
+}
+
+//Modificacion en el modo de escritorio
+@media (min-width: 600px) {
+
+}

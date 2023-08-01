@@ -1,0 +1,1 @@
+npm install angularx-qrcode @capacitor/camera @capacitor/preferences @capacitor/filesystem @ionic/pwa-elements --save

@@ -1,0 +1,78 @@
+ion-title{
+    font-family: tituloss;
+}
+
+
+ion-menu::part(backdrop) {
+    background-color: rgba(24, 21, 24, 0.5);
+  }
+  
+ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+}
+.btn{
+    width: 100%;
+}
+.tarjetausu{
+    display: inline-flex;
+}
+.actions{
+    width: 20%;
+}
+
+//color de fondo
+//color de fondo de la targeta
+ion-card{
+    background: #f1d9b0;
+}
+//Color de la cantidad de precio
+ion-input{
+    background-color: white;
+}
+//color de fondo
+ion-select{
+    background-color: white;
+}
+
+
+.logo img{
+    width: 50%;
+    height: 50%;
+  }
+//fondo de la targeta
+button{
+  background-color:#ff9d29 ;
+  border-style: none;
+}
+//color de fondo del menu
+ion-toolbar{
+  --ion-background-color:#ff9d29;
+}
+//Fondo del menu del despliegue
+ion-menu ion-content {
+  --ion-background-color: #f1d9b0;
+}
+
+//Metodo de pago
+  .option ion-select{
+      width: 95%;
+      margin: 10px; 
+      border-style: none;
+  }
+  // Monto recibido
+  ion-input{
+      width: 95%;
+      margin: 10px;
+      border-style: none;
+  }    
+  // Boton de pago
+  .pago button{
+      width: 95%;
+  }
+  //modo Escritorio
+@media (min-width: 600px) {
+  }
+  .custom-alert {
+    white-space: pre-line;
+  }

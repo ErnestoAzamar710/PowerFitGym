@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Pagar Suscripción</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-searchbar animated="true" (ionInput)="handleInput($event)" placeholder="Buscar cliente"></ion-searchbar>
+      <ion-card *ngFor="let result of results">
+        <ion-row>
+          <ion-col>
+            <img class="imgUser" src="{{result.foto}}" alt="Foto Usuario">
+          </ion-col>
+          <ion-col class="text-center">
+            <p style="font-size: 120%;"><b>Nombre:</b> {{result.nombre}}</p>
+            <p><b>Ultimo dia habil:</b> {{result.ulDia}}</p>
+            <ion-button fill="clear" [routerLink]="['/confirmar-pago',result.uid]"><ion-icon style="font-size: 200%;" name="cash-outline"></ion-icon></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+</ion-content>

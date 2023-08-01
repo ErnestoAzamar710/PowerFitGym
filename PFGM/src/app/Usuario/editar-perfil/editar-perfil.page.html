@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+    </ion-buttons>
+    <ion-title class="text-center">Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="text-center">
+    <div class="logo">
+      <img src="../../../assets/icon/MicrosoftTeams-image.png" alt="Logo">
+      <h1>POWERFIT GYM</h1>
+    </div>
+    <form class="formLog">
+      <div class="option">
+        <ion-input type="text" name="txtNnombre" [(ngModel)]="actUser.nombre" value="{{User.nombre}}" label="Nombre completo" label-placement="floating" fill="outline"></ion-input>
+        <br/>
+        <ion-input type="text" name="txtNtelefono" [(ngModel)]="actUser.telefono" value="{{User.telefono}}" label="Número de Teléfono" label-placement="floating" fill="outline"></ion-input>
+        <br/>
+      </div>
+    <div class="takephoto">
+      <button class="btn btn-primary" (click)="addNewToGallery()"><ion-icon style="font-size: 200%;" name="camera-outline"></ion-icon></button>
+      <p></p>
+      <img [src]="capturedPhoto" style="width: 30%;" *ngFor="let capturedPhoto of photos" alt="Foto Usuario">
+    </div>
+      <p></p>
+      <div class="inico">
+        <button class="btn btn-primary" (click)="actualizarDatos(User.uid)" type="submit">Actualizar Perfil</button>
+        <p></p>
+      </div>
+    </form>
+  </div>
+</ion-content>
