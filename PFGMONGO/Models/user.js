@@ -21,14 +21,6 @@ const UserSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    diaIn: {
-        type: Date,
-        default: Date.now()
-    },
-    ulDia:{
-        type: String,
-        default:"00-00-00"
-    },
     plan:{
         type: String,
         default:"NINGUNO"
@@ -36,6 +28,14 @@ const UserSchema = mongoose.Schema({
     estado:{
         type: String,
         default:"INACTIVO"
+    },
+    ulDia:{
+        type: String,
+        default:"00-00-00"
+    },
+    diaIn: {
+        type: Date,
+        default: Date.now()
     }
 })
 module.exports = mongoose.model('User', UserSchema);

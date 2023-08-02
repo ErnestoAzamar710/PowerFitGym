@@ -16,7 +16,7 @@ exports.addUser = async (req,res) => {
 exports.getUsers = async (req,res) => {
     try {
         const users = await User.find();
-        res.json(users);    
+        return res.json(users);    
     } catch (error) {
         console.log(error);
         res.status(500).send("hubo un error");
@@ -30,7 +30,7 @@ exports.getUid = async (req, res) => {
         if (!user) {
             return res.status(404).json({ msg: "El usuario no existe" });
         }
-        res.send(user);
+        return res.json(user);
 
     } catch (error) {
         console.log(error);
