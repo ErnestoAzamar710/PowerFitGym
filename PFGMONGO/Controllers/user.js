@@ -1,5 +1,4 @@
 const User = require('../Models/user');
-const ObjectId = require('mongoose').Types.ObjectId;
 exports.addUser = async (req,res) => {
     try {
         let user;

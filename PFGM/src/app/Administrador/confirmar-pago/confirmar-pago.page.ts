@@ -29,7 +29,8 @@ export class ConfirmarPagoPage implements OnInit {
     plan: "",
     estado: ""
   }
-  constructor(private database:DbmongoService,private router:Router, private alertController: AlertController) { }
+  constructor(private database:DbmongoService,private router:Router, 
+    private alertController: AlertController) { }
   DIA: Number = 100;
   SEMANA: Number = 250;
   MES: Number = 650;
@@ -55,7 +56,7 @@ export class ConfirmarPagoPage implements OnInit {
     }
   }
   async pagado(){
-    const resulado = this.selectedOptionValue.valueOf() - this.MontoRecibido.valueOf(); 
+    const resulado = this.MontoRecibido.valueOf() - this.selectedOptionValue.valueOf(); 
     console.log(resulado);
     this.CambiosUser.plan = this.selectedOption;
     this.CambiosUser.estado = "ACTIVO";

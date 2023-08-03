@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DbmongoService } from 'src/app/services/dbmongo.service';
 import { Auth } from '@angular/fire/auth';
-import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
+import { InfiniteScrollCustomEvent, LoadingController, AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-admin-usuarios',
   templateUrl: './admin-usuarios.page.html',
@@ -9,13 +9,19 @@ import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
 })
 export class AdminUsuariosPage implements OnInit {
 
-  constructor(private database:DbmongoService, private Auth: Auth, private loadingCtrl:LoadingController) { }
+  constructor(private database:DbmongoService, private Auth: Auth, 
+    private loadingCtrl:LoadingController,private alertController: AlertController) { }
   USUARIOS:any=[];
   public results = [...this.USUARIOS];
   ngOnInit() {
   }
   ionViewWillEnter(){
     this.loadClientes();
+  }
+  User={
+    _id: "",
+    uid: "",
+    nombre: "",
   }
   async loadClientes(event?:InfiniteScrollCustomEvent){
     const loading = await this.loadingCtrl.create({
@@ -41,23 +47,43 @@ export class AdminUsuariosPage implements OnInit {
   }
   async eliminarUsuario(uid:String){
     console.log(uid);
-    //try{
-      //const userDel = await this.Auth.currentUser;
-      //if(userDel){
-        //await userDel.delete();
-        this.database.delUser(uid).subscribe(
-          ()=>{
-            console.log('Registro eliminado exitosamente.');
-            location.reload();
-          },
-          (error)=>{
-            console.error('Error al eliminar registro:', error);
-          }
-        );
-      //}
-    //}
-    //catch (error){
-      //console.error('Error al eliminar cuenta de autenticación:', error);
-    //}
+    this.database.getUser(uid).subscribe(
+      async (data)=>{
+        this.User=data;
+        console.log(this.User);
+        const alert = await this.alertController.create({
+          header: 'Confirmación de Eliminación',
+          message: `¿Desea eliminar al Usuario: ${this.User.nombre}?`,
+          buttons: [
+            {
+              text: 'Cancelar',
+              role: 'cancel',
+              handler: () => {
+                console.log('Botón Cancelar presionado');
+              }
+            },
+            {
+              text: 'Aceptar',
+              handler: () => {
+                this.database.delUser(uid).subscribe(
+                  ()=>{
+                    console.log('Registro eliminado exitosamente.');
+                    location.reload();
+                  },
+                  (error)=>{
+                    console.error('Error al eliminar registro:', error);
+                  }
+                );
+    
+              }
+            }
+          ]
+        });
+        await alert.present();
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
   }
 }
