@@ -1,28 +1,44 @@
+// nombre-pagina.page.scss
+ion-content {
+  --background: #f7b733;
+}
+
+//Logo principal
 .logo img{
     width: 25%;
     height: 25%;
   }
   
+  //Boton de inicio de session
   button{
     width: 50%;
-    background-color: #ff9d29;
-    border-color: #ff9d29;
+    background-color: #fc4a1a;
+    border-color: #fc4a1a;
   }
-  
+  button:hover{
+    background-color: white;
+    color: black;
+  }
+
+
+  //Formulario de los inoputs
   .formLog ion-input{
-    background-color: #f1d9b0;
+    background-color: #ffffff;
+    border-color: black;
   }
   
   //titulo
   h1{
     font-family: "GYM";
   }
-  
+
+  //Boton de iniciar con google
   .otro button{
     background-color: white;
     color: black;
     border-color: black;
   }
+  
    //Logo
    .logo img{
     width: 70%;
@@ -55,10 +71,43 @@
   .logo h1{
     font-size: 40px;
   }
+
+
+
+
+
+
   //Modo escritorio
    @media (min-width: 600px) {
+    //logo
    .logo img{
     width: 20%;
     height: 20%;
    }
+   //Div que esta dentro del otro div de los inputs
+   .put{
+    display: flex;
+    justify-content: center; // Centrado horizontal
+    align-items: center; // Centrado vertical
+   }
+
+   //Div de los inputs
+   .inputsion{
+    width: 40%;
+   }
+   
+
+   //Botton del inicio de session
+   button{
+    width: 20%;
+    background-color: #fc4a1a;
+    border-color: #fc4a1a;
+  }
+
+  //los Inputs
+   .formLog ion-input{
+    width: 100%;
+    background-color: #ffffff;
+    border-color: black;
+  }
   }
