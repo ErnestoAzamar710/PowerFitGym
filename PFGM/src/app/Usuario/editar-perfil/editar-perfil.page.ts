@@ -12,7 +12,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 export class EditarPerfilPage implements OnInit {
   actUser={
     nombre:"",
-    telefono:656,
+    telefono:0,
     foto:""
   }
   photos: String[]=[];
