@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%;" class="fa-solid fa-house"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Gimnasio Movil</ion-title>
   </ion-toolbar>
@@ -12,43 +12,46 @@
     <div class="logo">
       <img src="../../assets/icon/MicrosoftTeams-image.png" alt="Logo">
     </div>
+    <div class="centered-card">
     <ion-card>
       <div class="text-center">
         <h4><b>Realiza el siguiente ejercicio</b></h4>
         <p></p>
         <ion-row>
           <ion-col>
-            <img src="https://aztethic.com/wp-content/uploads/2022/04/06621301-Push-up-m_Chest-FIX_1080.gif" alt="Ejercicio">
+            <img class="ejercicio" src="https://aztethic.com/wp-content/uploads/2022/04/06621301-Push-up-m_Chest-FIX_1080.gif" alt="Ejercicio">
           </ion-col>
         </ion-row>
       </div>
       <p></p>
       <ion-row>
         <ion-col>
-          <ion-button class="btn"><i style="font-size: 120%;" class="fa-solid fa-backward"></i></ion-button>
+          <ion-button class="mi-boton-personalizado"><i style="font-size: 120%;" class="fa-solid fa-backward"></i></ion-button>
         </ion-col>
         <ion-col class="timer">
           <div class="content-timer">
             <div class="content-m">
-              <div class="time">{{ minutes | number:'2.0'}} <span>:</span></div>
-            </div>
-            <div class="content-s">
+              <div class="time">{{ minutes | number:'2.0'}}:</div>
+            
+            
               <div class="time">{{seconds | number:'2.0'}}</div>
             </div>
           </div>
           <div class="content-btn-action">
-            <button type="button" (click)="start()" [disabled]="disabled">&#9658;</button>
-            <button type="button" (click)="reset()">&#8635;</button>
+      
           </div>
         </ion-col>
         <ion-col>
-          <ion-button class="btn"><i style="font-size: 120%;" class="fa-solid fa-forward"></i></ion-button>
+          <ion-button class="mi-boton-personalizado"><i  class="fa-solid fa-forward"></i></ion-button>
         </ion-col>
       </ion-row>
       <p></p>
-      <button class="hola" type="button" (click)="stop()">&#9724;</button>
+      <button class="play" type="button" (click)="start()" [disabled]="disabled">&#9658;</button>
+      <button class="stop" type="button" (click)="stop()">&#9724;</button>
+      <button class="reset" type="button" (click)="reset()">&#8635;</button>
       <p></p>
       <p></p>
     </ion-card>
+  </div>
   </div>
 </ion-content>

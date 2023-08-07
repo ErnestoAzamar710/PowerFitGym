@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%;" class="fa-solid fa-house"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Generar QR</ion-title>
   </ion-toolbar>
@@ -11,17 +11,20 @@
   <div class="text-center">
     <div class="logo">
       <img src="../../../assets/icon/MicrosoftTeams-image.png" alt="Logo">
+      <h1>POWERFIT GYM</h1>
     </div>
+    <div class="centered-card">
     <ion-card>
       <div class="text-center">
         <h4><b>Escane su codigo QR</b></h4>
         <ion-row>
           <ion-col>
-            <qrcode [qrdata]="User._id"  [width]="250" [errorCorrectionLevel]="'M'"></qrcode>
+            <qrcode class="codigo" [qrdata]="User._id"  [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
           </ion-col>
         </ion-row>
       </div>
       <p></p>
     </ion-card>
+  </div>
   </div>
 </ion-content>

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%;" class="fa-solid fa-house"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Gimnasio Movil</ion-title>
   </ion-toolbar>
@@ -11,7 +11,9 @@
   <div class="text-center">
     <div class="logo">
       <img src="../../assets/icon/MicrosoftTeams-image.png" alt="Logo">
+      <h1>POWERFIT GYM</h1>
     </div>
+    <div class="centered-card">
     <ion-card>
       <div class="text-center">
         <h4><b>Elige un tipo de ejercicio</b></h4>
@@ -33,8 +35,9 @@
         </ion-row>
       </div>
       <p></p>
-      <img src="../../../assets/icon/image.png" alt="Ejercicio en casa">
+      <img class="hogar" src="../../../assets/icon/image.png" alt="Ejercicio en casa">
       <p></p>
     </ion-card>
+  </div>
   </div>
 </ion-content>

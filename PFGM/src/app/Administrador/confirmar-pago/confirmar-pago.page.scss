@@ -1,7 +1,7 @@
 ion-title{
-    font-family: tituloss;
+  font-family: "INTRO";
+  color: black;
 }
-
 
 ion-menu::part(backdrop) {
     background-color: rgba(24, 21, 24, 0.5);
@@ -24,7 +24,8 @@ ion-menu::part(container) {
 //color de fondo
 //color de fondo de la targeta
 ion-card{
-    background: #f1d9b0;
+    background: #ff9d29;
+    color: white;
 }
 //Color de la cantidad de precio
 ion-input{
@@ -34,20 +35,34 @@ ion-input{
 ion-select{
     background-color: white;
 }
-
-
+b{
+  color: white;
+}
+ion-input{
+  border-radius: 10px;
+  color: black;
+}
+ion-row{
+  color: black;
+}
 .logo img{
     width: 50%;
     height: 50%;
   }
 //fondo de la targeta
 button{
-  background-color:#ff9d29 ;
+  background-color:#ff5c00 ;
   border-style: none;
+}
+button:hover{
+  background-color: white !important;
+  color: black;
 }
 //color de fondo del menu
 ion-toolbar{
-  --ion-background-color:#ff9d29;
+  
+  text-align: center;
+  --ion-background-color:#ff5c00;
 }
 //Fondo del menu del despliegue
 ion-menu ion-content {
@@ -72,7 +87,53 @@ ion-menu ion-content {
   }
   //modo Escritorio
 @media (min-width: 600px) {
+
+  ion-card{
+    width: 70%;
+    height: 100%;
+  } 
+
+  .container{
+    display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+.card-wrapper{
+    justify-content: center;
+    
+}
+button{
+  width: 40% !important;
+}
+
+ion-header{
+  height: 7%;
+}
+ion-toolbar{
+  height: 100%;
+}
+
+ion-title{
+ 
+  font-size: 120%;
+  position: relative;
+top: -5px; 
+}
+
+ion-input{
+  min-height: 40px !important;
+  font-size: 10px;
+}
+.option ion-select{
+    min-height: 40px !important;
+  font-size: 10px;
+}
+
+
+
   }
   .custom-alert {
     white-space: pre-line;
   }
+
+

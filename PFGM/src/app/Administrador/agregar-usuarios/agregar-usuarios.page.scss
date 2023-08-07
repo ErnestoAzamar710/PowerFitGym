@@ -1,11 +1,10 @@
 h1{
-    font-family: "GYM";
-    font-size: 50px;
+    font-family: "TITULO";
   }
   ion-title{
-    font-family: tituloss;
-  }
-  
+    font-family: "INTRO";
+    color: black;
+}
   
   ion-menu::part(backdrop) {
       background-color: rgba(24, 21, 24, 0.5);
@@ -16,24 +15,30 @@ h1{
       box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
   }
   .logo img{
-      width: 25%;
-      height: 25%;
+      width: 50%;
+      height: 50%;
   }
   .btn{
-    width: 100%;
+    width: 70%;
   }
   //Colores de las paginas
   //Color de los inputs
+
   ion-input{
+    margin-left: 20px;
     background-color:#f1d9b0;
+    width: 90%;
+    min-height: 45px !important;
+    font-size: 12px;
   }
   //fobdo del menu 
   ion-toolbar{
-    --ion-background-color:#ff9d29;
+    --ion-background-color:#ff5c00;
+    text-align: center;
   }
   //Fondo de los botones
   ion-content button{
-    background-color:#ff9d29;
+    background-color:#ffa858;
     border-style: none;
   }
   //el emnu del despliegue
@@ -43,11 +48,50 @@ h1{
   .imgUser{
     width: 75%;
 }
+
+
 @media (min-width: 600px){
-  .imgUser{
-      width: 60%;
-  }
-  ion-card{
-      width: 65%;
+
+  .logo img{
+    width: 15%;
+    height: 20%;
+}
+  
+  .put{
+    display: flex;
+    justify-content: center; // Centrado horizontal
+    align-items: center; // Centrado vertical
   } 
+  .inputsion{
+    width: 70%;
+   }
+   button{
+    width: 40% !important;
+    height: 30px !important;
+    font-size: 10px;
+   }
+   ion-header{
+    height: 7%;
+}
+ion-toolbar{
+    height: 100%;
+}
+
+ion-title{
+    
+  font-size: 120%;
+  position: relative;
+top: -5px; 
+}
+h1{
+  font-size: 50px !important;
+}
+ion-input{
+  width: 100%;
+  min-height: 40px !important;
+  font-size: 10px;
+}
+
+
+
 }

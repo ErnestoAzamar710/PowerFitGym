@@ -8,8 +8,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="searchbar-container">
+
   <ion-searchbar animated="true" (ionInput)="handleInput($event)" show-clear-button="focus" placeholder="Buscar cliente"></ion-searchbar>
-      <ion-card *ngFor="let result of results">
+</div>
+  <div class="container">
+      <ion-card class="card-wrapper" *ngFor="let result of results">
         <ion-row>
           <ion-col>
             <img class="imgUser" src="{{result.foto}}" alt="Foto Usuario">
@@ -30,4 +34,5 @@
           </ion-col>
         </ion-row>
       </ion-card>
+    </div>
 </ion-content>

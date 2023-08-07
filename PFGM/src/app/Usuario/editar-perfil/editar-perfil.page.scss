@@ -6,12 +6,20 @@ ion-menu::part(container) {
     border-radius: 0 20px 20px 0;
     box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
 }
+ion-title{
+  font-family: "INTRO";
+  color: black;
+}
 .logo img{
     width: 25%;
     height: 25%;
 }
 .btn{
   width: 100%;
+}
+
+h1{
+  font-family: "TITULO";
 }
 //Colores de las paginas
 //Color de los inputs
@@ -20,7 +28,7 @@ ion-input{
 }
 //fobdo del menu 
 ion-toolbar{
-  --ion-background-color:#ff9d29;
+  --ion-background-color:#fc4a1a;
 }
 //Fondo de los botones
 ion-content button{
@@ -28,9 +36,6 @@ ion-content button{
   border-style: none;
 }  
 
-ion-title{
-  font-family: tituloss;
-}
 
 .logo img{
   width: 50%;
@@ -47,4 +52,51 @@ width: 40%;
 //modo de escritorio
 @media (min-width: 600px) {
 
+  .logo img{
+    width: 15%;
+    height: 20%;
+}
+.put{
+  display: flex;
+  justify-content: center; // Centrado horizontal
+  align-items: center; // Centrado vertical
+}
+.option{
+  width: 50%;
+} 
+button{
+  width: 20% !important;
+}
+
+ion-header{
+  height: 7%;
+}
+ion-toolbar{
+  height: 100%;
+}
+
+ion-title{
+  
+  font-size: 120%;
+  position: relative;
+top: -5px; 
+}
+
+h1{
+  font-size: 50px !important;
+}
+
+ion-input{
+  min-height: 40px !important;
+  font-size: 10px;
+}
+.takephoto button{
+  height: 45px;
+}
+.home{
+
+        
+  position: relative;
+top: -5px; 
+}
 }

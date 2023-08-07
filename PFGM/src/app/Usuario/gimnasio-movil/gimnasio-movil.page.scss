@@ -1,3 +1,8 @@
+ion-title{
+  font-family: "INTRO";
+  color: black;
+}
+
 ion-menu::part(backdrop) {
     background-color: rgba(24, 21, 24, 0.5);
 }
@@ -6,32 +11,29 @@ ion-menu::part(container) {
     border-radius: 0 20px 20px 0;
     box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
 }
-.logo img{
-    width: 25%;
-    height: 25%;
-}
 .btn{
   width: 100%;
   color: white;
 }
   
-ion-title{
-  font-family: tituloss;
-}
 
+h1{
+  font-family: "TITULO";
+}
 
 //Colores de las paginas
 //Color de los inputs
 ion-card{
-  background-color:#f1d9b0;
+  background-color:#ffa858;
+  
 }
 //fobdo del menu 
 ion-toolbar{
-  --ion-background-color:#ff9d29;
+  --ion-background-color:#fc4a1a;
 }
 //Fondo de los botones
 ion-button{
-  --background:#ff9d29;
+  --background:#fc4a1a;
   border-style: none;
 }
 .logo img{
@@ -41,5 +43,50 @@ ion-button{
 
 //Modificacion en el modo de escritorio
 @media (min-width: 600px) {
+  .logo img{
+    width: 15%;
+    height: 20%;
+}
+ion-button{
+ width: 60% !important;
+ height: 40px !important;
+}
+ion-card{
+  width: 35%;
+}
 
+.hogar{
+  width: 35%;
+  height: 35%;
+}
+/* styles.css o tu archivo de hoja de estilos */
+.centered-card {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+ion-header{
+  height: 7%;
+}
+ion-toolbar{
+  height: 100%;
+}
+
+ion-title{
+  
+  font-size: 120%;
+  position: relative;
+top: -5px; 
+}
+
+h1{
+  font-size: 45px !important;
+}
+.home{
+
+        
+  position: relative;
+top: -5px; 
+}
 }

@@ -1,7 +1,7 @@
 ion-title{
-    font-family: tituloss;
-  }
-  
+  font-family: "INTRO";
+  color: black;
+}
   
   ion-menu::part(backdrop) {
       background-color: rgba(24, 21, 24, 0.5);
@@ -14,13 +14,10 @@ ion-title{
   
   //fondo de los titulos
   ion-toolbar{
-      --ion-background-color:#ff9d29;
+    text-align: center;
+    --ion-background-color:#ff5c00;
   }
   
-  //fondo del buscador
-  ion-searchbar{
-      --ion-background-color: #f1d9b0;
-  }
   
   //Botones del menu
   
@@ -30,7 +27,8 @@ ion-title{
     }
   //fondo de las targetas
   ion-card{
-    --ion-background-color: #f1d9b0;
+    --ion-background-color: #ff9d29;
+    color: white;
   }
   //Fondo del menu del despliegue
   ion-menu ion-content {
@@ -52,5 +50,38 @@ ion-title{
   //modo escritorio
   @media (min-width: 600px) {
 
+    .container{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    ion-card{
+      width: 80%;
+      height: 180px;
+  }
+  
+  ion-header{
+    height: 7%;
+}
+ion-toolbar{
+    height: 100%;
+}
+
+ion-title{
+
+  font-size: 120%;
+  position: relative;
+top: -5px; 
+}
+
+.searchbar-container {
+  text-align: center; /* Centrar horizontalmente */
+}
+
+ion-searchbar {
+  display: inline-block; /* Para que ocupe solo el ancho necesario */
+  margin: 0 auto; /* Aplicar margen automático en los lados para centrar */
+  width: 80%;
+}
       
-      }
+    }

@@ -1,23 +1,52 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fc4a1a));
+  --background: var(--ion-item-background, var(--ion-background-color, #ff5c00));
 }
 // nombre-pagina.page.scss
 ion-list {
-  --ion-background-color: #fc4a1a;
+  --ion-background-color:#ff5c00;
 }
 
 ion-item{
   --ion-color:#fff;
 }
 
-// nombre-pagina.page.scss
-ion-icon {
-  color: #fff;
+/* CSS personalizado */
+/* Ejemplo de regla CSS con mayor especificidad */
+ion-note{
+  color: black !important;
 }
 
-// nombre-pagina.page.scss
-ion-label {
-  color: #fff;
+
+.white-icon {
+  color: white !important;
+}
+
+.white-label {
+  color: white !important;
+}
+
+//modo escritorio
+
+@media (min-width: 600px){
+/* Ejemplo de regla CSS con mayor especificidad */
+ion-list .custom-list-header {
+  font-size: 20px !important;
+}
+ion-note{
+  font-size: 15px !important;
+  color: black !important;
+}
+
+
+.white-icon {
+  color: white !important;
+  font-size: 15px;
+}
+
+.white-label {
+  color: white !important;
+  font-size: 15px;
+}
 }
 
 ion-menu.md ion-content {

@@ -1,13 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%;" class="fa-solid fa-house"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Ver Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="container">
   <ion-card>
     <ion-row>
       <ion-col size="5">
@@ -42,4 +43,5 @@
     
     <p></p>
   </ion-card>
+</div>
 </ion-content>

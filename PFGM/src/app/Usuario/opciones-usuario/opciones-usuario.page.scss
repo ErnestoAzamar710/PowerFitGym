@@ -1,6 +1,10 @@
 ion-toolbar{
     --ion-background-color:#fc4a1a;
 }
+ion-title{
+    font-family: "INTRO";
+    color: black;
+}
 ion-button{
     --background:#ffffff ;
     margin-top: 80px;
@@ -11,17 +15,70 @@ i{
 }
 //color de fondo de la targeta
 ion-card{
-    background: #f1d9b0;
+    background: #ffa858;
+    color: white;
+    border: none !important;
 }
 
 ion-button.circular-button {
     width: 150px; /* Ajusta el ancho y alto según el tamaño que desees */
     height: 150px;
     --border-radius: 50%; /* Esto hace que el botón tenga forma circular */
-    --boder: 2px solid red;
+   
   }
-  ion-title{
-    font-family: tituloss;
+
+@media (min-width: 600px){
+    ion-card{
+        width: 60%;
+    }
+
+    .container{
+      display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+    }
+    .card-wrapper{
+        justify-content: center;
+    }
+    ion-card{
+        background: #ffa858;
+        color: white;
+        border:none;
+    }
+    h4{
+        font-size: 15px;
+    }
+    .titulo{
+        font-size: 20px;
+    }
+    ion-header{
+        height: 7%;
+    }
+    ion-toolbar{
+        height: 100%;
+    }
+
+    ion-title{
+        
+        font-size: 120%;
+        position: relative;
+  top: -5px; 
+    }
+
+    ion-button.circular-button {
+        width: 60px; /* Ajusta el ancho y alto según el tamaño que desees */
+        height: 60px;
+        --border-radius: 50%; /* Esto hace que el botón tenga forma circular */
+        font-size: 8px;
+       
+      }
+
+      i{
+        color: black;
+        
+    }
+    
+
 }
 
 

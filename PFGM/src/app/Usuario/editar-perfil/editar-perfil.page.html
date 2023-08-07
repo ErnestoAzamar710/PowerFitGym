@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 200%;" class="fa-solid fa-house"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%;" class="fa-solid fa-house"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Editar Perfil</ion-title>
   </ion-toolbar>
@@ -14,12 +14,14 @@
       <h1>POWERFIT GYM</h1>
     </div>
     <form class="formLog">
+      <div class="put">
       <div class="option">
         <ion-input type="text" name="txtNnombre" [(ngModel)]="actUser.nombre" value="{{User.nombre}}" label="Nombre completo" label-placement="floating" fill="outline"></ion-input>
         <br/>
         <ion-input type="text" name="txtNtelefono" [(ngModel)]="actUser.telefono" value="{{User.telefono}}" label="Número de Teléfono" label-placement="floating" fill="outline"></ion-input>
         <br/>
       </div>
+    </div>
     <div class="takephoto">
       <button class="btn btn-primary" (click)="addNewToGallery()"><ion-icon style="font-size: 200%;" name="camera-outline"></ion-icon></button>
       <p></p>

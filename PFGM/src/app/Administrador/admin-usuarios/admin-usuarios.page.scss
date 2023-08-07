@@ -1,7 +1,7 @@
 ion-title{
-    font-family: tituloss;
+    font-family: "INTRO";
+    color: black;
 }
-
 ion-menu::part(backdrop) {
     background-color: rgba(24, 21, 24, 0.5);
   }
@@ -26,20 +26,30 @@ ion-menu ion-content {
     background-color:#ff9d29 ;
     border-style: none;
   }
+  h5{
+    color: white;
+  }
+  h6{
+    color: white;
+  }
+  ion-card-content{
+    color: white;
+  }
 //panel del titulo
 ion-toolbar{
     text-align: center;
-    --ion-background-color:#fc4a1a;
+    --ion-background-color:#ff5c00;
 }
 ion-searchbar{
-    --ion-background-color: #f1d9b0;
+    //--ion-background-color: #f1d9b0;
+    --ion-border-color:black;
 }
 ion-icon{
     color: black;
 }
 //fondo de las targetas
 ion-card{
-    --ion-background-color: #f1d9b0;
+    --ion-background-color: #ff9d29;
   }
 ion-title{
     color: black;
@@ -53,6 +63,37 @@ ion-title{
         width: 60%;
     }
     ion-card{
-        width: 65%;
+        width: 90%;
     } 
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .card-wrapper{
+        justify-content: center;
+    }
+    ion-header{
+        height: 7%;
+    }
+    ion-toolbar{
+        height: 100%;
+    }
+
+    ion-title{
+        font-size: 120%;
+        position: relative;
+  top: -5px; 
+    }
+
+    .searchbar-container {
+        text-align: center; /* Centrar horizontalmente */
+      }
+      
+      ion-searchbar {
+        display: inline-block; /* Para que ocupe solo el ancho necesario */
+        margin: 0 auto; /* Aplicar margen automático en los lados para centrar */
+        width: 80%;
+      }
+      
 }
