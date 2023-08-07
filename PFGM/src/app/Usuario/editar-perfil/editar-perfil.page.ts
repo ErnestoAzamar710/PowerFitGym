@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 import { PhotosService } from '../../services/photos-service.service';
 import { Router } from '@angular/router';
 import { DbmongoService } from 'src/app/services/dbmongo.service';
@@ -17,7 +17,7 @@ export class EditarPerfilPage implements OnInit {
   }
   photos: String[]=[];
   constructor(private menuCtrl: MenuController,public photoservices:PhotosService,
-    private database:DbmongoService,private router:Router) { 
+    private database:DbmongoService,private router:Router, private alertController: AlertController) { 
     this.photos = this.photoservices.photos;
    }
   ngOnInit() {
@@ -32,7 +32,8 @@ export class EditarPerfilPage implements OnInit {
     diaIn: "",
     ulDia: "",
     plan: "",
-    estado: ""
+    estado: "",
+    ulPago: ""
   }
   ionViewDidEnter() {
     this.menuCtrl.enable(false);
@@ -68,8 +69,30 @@ export class EditarPerfilPage implements OnInit {
     let id = arr[2]
     return id    
   }
-  actualizarDatos(uid:String){
-    this.database.putUser(uid,this.actUser).subscribe();
-    this.router.navigate(['/ver-perfil',uid]);
+  async actualizarDatos(uid:String){
+    if(this.actUser.nombre.toString() !="" && this.actUser.telefono>0){
+      const alert = await this.alertController.create({
+            header: 'Editar perfil',
+            message: '¿Desea realizar los cambios?',
+            buttons: [
+              {
+                text: 'Aceptar',
+                handler: () => {
+                  this.database.putUser(uid,this.actUser).subscribe();
+                  this.router.navigate(['/ver-perfil',uid]);  
+                }
+              }
+            ]
+      });
+      await alert.present();
+    }
+    else{
+      const alert = await this.alertController.create({
+        header: 'Editar perfil',
+        message: 'Cambie los datos presentados.',
+        buttons: ['Aceptar']
+      });
+      await alert.present();
+    }
   }
 }

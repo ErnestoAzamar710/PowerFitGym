@@ -36,6 +36,10 @@ const UserSchema = mongoose.Schema({
     diaIn: {
         type: Date,
         default: Date.now()
+    },
+    ulPago:{
+        type: String,
+        default:"" 
     }
 })
 module.exports = mongoose.model('User', UserSchema);

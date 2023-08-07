@@ -15,7 +15,8 @@ export class ConfirmarPagoPage implements OnInit {
   CambiosUser={
     plan:"",
     estado:"",
-    ulDia:""
+    ulDia:"",
+    ulPago:""
   }
   User={
     _id: "",
@@ -61,11 +62,40 @@ export class ConfirmarPagoPage implements OnInit {
     this.CambiosUser.plan = this.selectedOption;
     this.CambiosUser.estado = "ACTIVO";
     this.CambiosUser.ulDia = this.ultimoDia.toString();
+    const fechaActual = new Date();
+    const año = fechaActual.getFullYear();
+    const mesp = fechaActual.getMonth()+1; // Los meses empiezan en 0 (enero es 0)
+    const díap = fechaActual.getDate();
+    let fActual: string;
+    if(mesp < 10){
+      const mes = "0"+mesp
+      if(díap < 10){
+        const dia = "0"+díap;
+        fActual = año+"-"+mes+"-"+díap;
+        console.log(fActual);
+      }
+      else{
+        fActual = año+"-"+mes+"-"+díap;
+        console.log(fActual);
+      }
+    }
+    else{
+      if(díap < 10){
+        const dia = "0"+díap;
+        fActual = año+"-"+mesp+"-"+dia;
+        console.log(fActual);
+      }
+      else{
+        fActual = año+"-"+mesp+"-"+díap;
+        console.log(fActual);
+      }
+    }
+    this.CambiosUser.ulPago = fActual;
     const alert = await this.alertController.create({
       header: 'Confirmación de Pago',
       message: `¿Estás seguro de realizar el pago? \n El pago a realizar es para: ${this.User.nombre}. \n De ser asi el cambio es de: $ ${resulado}`,
       buttons: [
-        {
+        { 
           text: 'Cancelar',
           role: 'cancel',
           handler: () => {

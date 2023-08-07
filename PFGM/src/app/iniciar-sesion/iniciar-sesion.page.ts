@@ -3,8 +3,9 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth'
 import { environment } from 'src/environments/environment';
-import { MenuController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -14,32 +15,51 @@ import { Router } from '@angular/router';
 export class IniciarSesionPage implements OnInit {
   email: string="";
   password: string="";
-  constructor(private menuCtrl: MenuController, private Auth: Auth,private router:Router) { }
+  constructor(private menuCtrl: MenuController, private Auth: Auth,
+    private router:Router, private alertController: AlertController) { }
   ionViewDidEnter() {
     this.menuCtrl.enable(false);
   }
   ngOnInit() {
   }
-  loginEmailPass(){
-    signInWithEmailAndPassword(this.Auth, this.email, this.password)
+  async loginEmailPass(){
+    if(this.email != "" && this.password != ""){
+      signInWithEmailAndPassword(this.Auth, this.email, this.password)
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
         const uid = user.uid;
         const uemail = user.email;
         console.log(uid,uemail);
-        //if(uemail != "asanchezazamar@gmail.com"){
-          if(uemail != "saturving@gmail.com"){
-          this.router.navigate(['/opciones-usuario',uid]);
-        }
-        else{
-          window.location.href = '/admin-usuarios';
-        }
+        if(uemail != "asanchezazamar@gmail.com"){
+          // if(uemail != "saturving@gmail.com"){
+           this.router.navigate(['/opciones-usuario',uid]);
+         }
+         else{
+           window.location.href = '/admin-usuarios';
+         }
       })
-      .catch((error) => {
+      .catch(async (error) => {
+        const alert = await this.alertController.create({
+          header: 'Inicio de Sesión',
+          message: `Correo y/o Contraseña incorrecta.`,
+          buttons: ['Aceptar']
+        });
+      
+        await alert.present();
         const errorCode = error.code;
         const errorMessage = error.message;
       });
+    }
+    else{
+      const alert = await this.alertController.create({
+        header: 'Inicio de Sesión',
+        message: `Ingrese los datos faltantes`,
+        buttons: ['Aceptar']
+      });
+    
+      await alert.present();
+    }
   }
   loginGoogle(){
     const app = initializeApp(environment.firebase);
@@ -55,18 +75,25 @@ export class IniciarSesionPage implements OnInit {
         const user = result.user;
         const uemail = user.email;
         const uid = user.uid;
-        console.log(uid);
-        //if(uemail != "asanchezazamar@gmail.com"){
-          if(uemail != "saturving@gmail.com"){
-          this.router.navigate(['/opciones-usuario',uid]);
-        }
-        else{
-          window.location.href = '/admin-usuarios';
-        }
+        console.log(uemail);
+        if(uemail != "asanchezazamar@gmail.com"){
+          // if(uemail != "saturving@gmail.com"){
+           this.router.navigate(['/opciones-usuario',uid]);
+         }
+         else{
+           window.location.href = '/admin-usuarios';
+         }
         
         // IdP data available using getAdditionalUserInfo(result)
         // ...
-      }).catch((error) => {
+      }).catch(async (error) => {
+        const alert = await this.alertController.create({
+          header: 'Inicio de Sesión',
+          message: `Ocurrio un error intentelo más tarde.`,
+          buttons: ['Aceptar']
+        });
+      
+        await alert.present();
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
