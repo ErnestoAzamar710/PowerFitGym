@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { DbmongoService } from 'src/app/services/dbmongo.service';
+import pdfMake from "pdfmake/build/pdfmake";  
+import pdfFonts from "pdfmake/build/vfs_fonts";  
+pdfMake.vfs = pdfFonts.pdfMake.vfs;   
 @Component({
   selector: 'app-opciones-usuario',
   templateUrl: './opciones-usuario.page.html',
@@ -18,7 +21,8 @@ export class OpcionesUsuarioPage implements OnInit {
     diaIn: "",
     ulDia: "",
     plan: "",
-    estado: ""
+    estado: "",
+    ulPago:""
   }
   constructor(private menuCtrl: MenuController, private database:DbmongoService,
     private router:Router) { }
@@ -48,4 +52,66 @@ export class OpcionesUsuarioPage implements OnInit {
   verperfil(){
     this.router.navigate(['/ver-perfil',this.User.uid]);
   }
+  generatePDF(uid:String) { 
+    console.log(uid);
+    this.database.getUser(uid).subscribe(
+      async (data)=>{
+        this.User=data;
+        console.log(this.User);
+        let docDefinition = { 
+          pageSize: 'A7', // Tamaño de página A6 (105 x 148 mm)
+          pageMargins: [10, 10, 10, 10],
+          content: [
+            {
+              text: 'Comprobante de Pago',
+              style: 'header'
+            },
+            {
+              columns: [
+              {
+                width: '*',
+                text: 'PowerFit Gym',
+                style: 'companyName'
+              }
+              ]
+            },
+            {
+              text: [
+                { text: 'Cliente: ', bold: true },
+                `\n\n${this.User.nombre}\n\n`,
+                { text: 'Plan: ', bold: true },
+                `\n\n${this.User.plan}\n\n`,
+                { text: 'Día del Pago: ', bold: true },
+                `\n\n${this.User.ulPago}\n\n\n`,
+                {text:'__________________________________', bold: true}
+              ],
+              style: 'details',
+              margin: [0, 20]
+            }
+          ],
+          styles: {
+            header: {
+              fontSize: 18,
+              bold: true,
+              alignment: 'center',
+              margin: [0, 0, 0, 10]
+            },
+            companyName: {
+              fontSize: 16,
+              bold: true,
+              alignment: 'center',
+            },
+            details: {
+              alignment: 'center'
+            }
+          }
+        };  
+       
+        pdfMake.createPdf(docDefinition).open();
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );  
+  }  
 }

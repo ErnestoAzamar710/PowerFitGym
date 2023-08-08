@@ -15,8 +15,8 @@
         <h4>Perfil del <br>Usuario</h4>
       </ion-col>
       <ion-col>
-        <ion-button class="circular-button"><i style="font-size: 300%;" class="fa-solid fa-file-invoice"></i></ion-button>
-        <h4>Generar <br>PDF</h4>
+        <ion-button class="circular-button" (click)="generatePDF(User.uid)"><i style="font-size: 300%;" class="fa-solid fa-file-invoice"></i></ion-button>
+        <h4>Comprobante de<br>Pago</h4>
       </ion-col>
     </ion-row>
     <ion-row class="text-center">

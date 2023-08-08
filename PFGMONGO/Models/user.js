@@ -39,7 +39,7 @@ const UserSchema = mongoose.Schema({
     },
     ulPago:{
         type: String,
-        default:"" 
+        default:"00-00-00"
     }
 })
 module.exports = mongoose.model('User', UserSchema);

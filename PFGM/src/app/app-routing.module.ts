@@ -44,7 +44,7 @@ const routes: Routes = [
     loadChildren: () => import('./Usuario/gimnasio-movil/gimnasio-movil.module').then( m => m.GimnasioMovilPageModule)
   },
   {
-    path: 'interfaz-gimnasio-movil',
+    path: 'interfaz-gimnasio-movil/:uid',
     loadChildren: () => import('./Usuario/interfaz-gimnasio-movil/interfaz-gimnasio-movil.module').then( m => m.InterfazGimnasioMovilPageModule)
   },
   {
