@@ -35,7 +35,7 @@ export class AgregarUsuariosPage implements OnInit {
   async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.DataUrl,
       source: CameraSource.Camera,
       quality: 100,
     });
@@ -44,10 +44,12 @@ export class AgregarUsuariosPage implements OnInit {
     if(capturedPhoto.webPath){
       this.photos.unshift(capturedPhoto.webPath);
     }
+    const img = capturedPhoto.dataUrl;
+    this.newUser.foto = img;
   }
   async crearUsuario(){
     if(this.newUser.email.toString()!="" && this.newUser.password.toString()!=""
-    && this.newUser.nombre.toString()!=""){
+    && this.newUser.nombre.toString()!="" && this.newUser.foto != ""){
       if(this.newUser.password.toString().length < 6){
         const alert = await this.alertController.create({
           header: 'Registro de Usuario',

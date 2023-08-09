@@ -42,7 +42,7 @@ export class EditarPerfilPage implements OnInit {
   async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.DataUrl,
       source: CameraSource.Camera,
       quality: 100,
     });
@@ -51,6 +51,8 @@ export class EditarPerfilPage implements OnInit {
     if(capturedPhoto.webPath){
       this.photos.unshift(capturedPhoto.webPath);
     }
+    const img = capturedPhoto.dataUrl;
+    this.actUser.foto = img;
   }
   getUserByUID(uid:String){
     this.database.getUser(uid).subscribe(
@@ -70,7 +72,8 @@ export class EditarPerfilPage implements OnInit {
     return id    
   }
   async actualizarDatos(uid:String){
-    if(this.actUser.nombre.toString() !="" && this.actUser.telefono>0){
+    if(this.actUser.nombre.toString() !="" && this.actUser.telefono>0 
+    && this.actUser.foto != ""){
       const alert = await this.alertController.create({
             header: 'Editar perfil',
             message: '¿Desea realizar los cambios?',
