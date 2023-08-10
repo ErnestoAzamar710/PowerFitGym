@@ -23,7 +23,7 @@ def get_sensors():
 
 @app.get("/users/<id>")
 def get_sensor(id):
-    user = db.users.find_one({'_id': ObjectId(id)})
+    user = db.users.find_one({'_id': ObjectId(id)},{'foto':0,'uid':0,'email':0,'telefono':0,'plan':0})
     response = Response(
         response=dumps(user), status=200,  mimetype="application/json")
     return response
