@@ -27,13 +27,13 @@ ion-menu ion-content {
     border-style: none;
   }
   h5{
-    color: white;
+    color: black;
   }
   h6{
-    color: white;
+    color: black;
   }
   ion-card-content{
-    color: white;
+    color: black;
   }
 //panel del titulo
 ion-toolbar{
@@ -47,15 +47,18 @@ ion-searchbar{
 ion-icon{
     color: black;
 }
+.menu{
+    color: white;
+  }
 //fondo de las targetas
 ion-card{
-    --ion-background-color: #ff9d29;
+    --ion-background-color: #F2F3F4;
   }
 ion-title{
-    color: black;
+    color: white;
 }
 .imgUser{
-    width: 75%;
+    width: 80% !important;
 }
 //Modo Escritorio
 @media (min-width: 600px){

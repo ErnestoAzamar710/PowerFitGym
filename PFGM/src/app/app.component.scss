@@ -13,7 +13,7 @@ ion-item{
 /* CSS personalizado */
 /* Ejemplo de regla CSS con mayor especificidad */
 ion-note{
-  color: black !important;
+  color: white !important;
 }
 
 
@@ -24,17 +24,24 @@ ion-note{
 .white-label {
   color: white !important;
 }
+ion-list-header{
+  color: white;
+}
 
 //modo escritorio
 
 @media (min-width: 600px){
+
+  ion-menu.md[_ngcontent-ng-c602149818] ion-item.selected[_ngcontent-ng-c602149818]{
+    --background:#EC7063;
+  }
 /* Ejemplo de regla CSS con mayor especificidad */
 ion-list .custom-list-header {
   font-size: 20px !important;
 }
 ion-note{
   font-size: 15px !important;
-  color: black !important;
+  color:  white!important;
 }
 
 

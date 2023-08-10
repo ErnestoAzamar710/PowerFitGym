@@ -1,6 +1,6 @@
 ion-title{
   font-family: "INTRO";
-  color: black;
+  color: white;
 }
   
   ion-menu::part(backdrop) {
@@ -12,6 +12,10 @@ ion-title{
       box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
   }
   
+  ion-menu-button{
+    color: white;
+  }
+
   //fondo de los titulos
   ion-toolbar{
     text-align: center;
@@ -27,8 +31,7 @@ ion-title{
     }
   //fondo de las targetas
   ion-card{
-    --ion-background-color: #ff9d29;
-    color: white;
+    --ion-background-color: #F2F3F4;
   }
   //Fondo del menu del despliegue
   ion-menu ion-content {

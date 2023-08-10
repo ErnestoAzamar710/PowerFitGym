@@ -1,9 +1,13 @@
+//Estios de letras
+//los h1
 h1{
     font-family: "TITULO";
   }
+
+//Menu principal
   ion-title{
     font-family: "INTRO";
-    color: black;
+    color: white;
 }
   
   ion-menu::part(backdrop) {
@@ -14,49 +18,53 @@ h1{
       border-radius: 0 20px 20px 0;
       box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
   }
-  .logo img{
-      width: 50%;
-      height: 50%;
-  }
-  .btn{
-    width: 70%;
-  }
-  //Colores de las paginas
-  //Color de los inputs
 
-  ion-input{
-    margin-left: 20px;
-    background-color:#f1d9b0;
-    width: 90%;
-    min-height: 45px !important;
-    font-size: 12px;
-  }
-  //fobdo del menu 
+
+  //Menu Principal
   ion-toolbar{
     --ion-background-color:#ff5c00;
     text-align: center;
   }
-  //Fondo de los botones
-  ion-content button{
+  
+  //logo de la empresa
+  .logo img{
+      width: 50%;
+      height: 50%;
+  }
+
+  //Inputs de los registros
+  ion-input{
+    margin-left: 20px;
+    background-color:#EAEDED;
+    width: 90%;
+    min-height: 50px !important;
+    font-size: 15px;
+  }
+  //cuando pasa el curso en uno de los inputs
+  .ion-valid.sc-ion-input-md-h {
+    --highlight-color: black !important;
+}
+
+    //Botones de la foto y el registro
+   ion-content button{
     background-color:#ffa858;
     border-style: none;
   }
-  //el emnu del despliegue
-  ion-menu ion-content {
-    --ion-background-color: #f1d9b0;
+  //icono de la barra de botones
+  .menu{
+    color: white;
   }
-  .imgUser{
-    width: 75%;
-}
 
 
 @media (min-width: 600px){
 
+  //Logo de la empresa
   .logo img{
-    width: 15%;
-    height: 20%;
+    width: 20%;
+    height: 15%;
 }
   
+//centrado del registro
   .put{
     display: flex;
     justify-content: center; // Centrado horizontal
@@ -76,9 +84,8 @@ h1{
 ion-toolbar{
     height: 100%;
 }
-
+ //Titulo
 ion-title{
-    
   font-size: 120%;
   position: relative;
 top: -5px; 
@@ -86,10 +93,12 @@ top: -5px;
 h1{
   font-size: 50px !important;
 }
+
+//Botones de registros
 ion-input{
   width: 100%;
   min-height: 40px !important;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 
