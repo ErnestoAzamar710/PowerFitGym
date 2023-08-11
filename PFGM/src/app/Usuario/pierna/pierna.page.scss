@@ -1,0 +1,199 @@
+ion-title{
+    font-family: "INTRO";
+    color: white;
+  }
+  
+  ion-menu::part(backdrop) {
+      background-color: rgba(24, 21, 24, 0.5);
+  }
+    
+  ion-menu::part(container) {
+      border-radius: 0 20px 20px 0;
+      box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+  }
+  .logo img{
+      width: 25%;
+      height: 25%;
+  }
+  .btn{
+    width: 100%;
+    color: white;
+  }
+  .content-timer{
+    display: inline-flex;
+  }
+  
+  
+  //Colores de las paginas
+  //Color de los inputs
+  ion-card{
+    background: #D5DBDB;
+    color: black;
+  }
+  //fobdo del menu 
+  ion-toolbar{
+    --ion-background-color:#fc4a1a;
+  }
+  //Fondo de los botones
+  ion-button{
+    --background:black;
+  }
+  
+  ion-menu::part(backdrop) {
+    background-color: rgba(24, 21, 24, 0.5);
+  }
+  
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
+  }
+  .logo img{
+    width: 25%;
+    height: 25%;
+  }
+  
+  .content-timer{
+  display: inline-flex;
+  padding: 20px;
+  font-size: 20px;
+  }
+  
+  
+  .logo img{
+    width: 50%;
+    height: 50%;
+  }
+  
+  
+  
+  .content-m{
+    display: grid; /* Activa el grid layout en el contenedor */
+    grid-template-columns: repeat(3, 1fr); /* Divide el espacio en 3 columnas iguales */
+    /* Opcionalmente, puedes agregar padding o margen entre los divs */  
+  }
+  .content-timer{
+    width: 100px; /* Elige el tamaño que desees para el círculo */
+    height: 100px; /* Elige el tamaño que desees para el círculo */
+    border-radius: 50%; /* Convierte el div en un círculo */
+    color: black;
+    background-color: white;
+    border: 3px solid #000000; /* Borde rojo de 2 píxeles */
+  }
+  
+  .play{
+    width: 80px;
+    height: 60px;
+    margin: 10px;
+    font-size: 50px;
+    background: transparent;
+  }
+  .play:hover{
+    color: #566573 !important;
+  }
+  .stop:hover{
+    color: #566573 !important;
+  }
+  .reset:hover{
+    color: #566573 !important;
+  }
+  .stop{
+    width: 80px;
+    height: 60px;
+    margin: 10px;
+    font-size: 50px;
+    background: transparent;
+  }
+  .reset{
+    width: 80px;
+    height: 60px;
+    margin: 10px;
+    font-size: 50px;
+    background: transparent;
+  }
+  
+  
+  .mi-boton-personalizado {
+    width: 80px; /* Ancho en píxeles o unidades de medida */
+    height: 80px; /* Alto en píxeles o unidades de medida */
+    font-size: 40px;
+  }
+  //fondo de escritorio
+  @media (min-width: 600px) {
+    .logo img{
+      width: 0%;
+      height: 0%;
+    }
+    ion-card{
+      width: 50%;
+    }
+    .ejercicio{
+      width: 30%;
+    }
+    /* styles.css o tu archivo de hoja de estilos */
+  .centered-card {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    
+  
+  }
+  
+  .content-timer{
+    width: 100px; /* Elige el tamaño que desees para el círculo */
+    height: 100px; /* Elige el tamaño que desees para el círculo */
+    border-radius: 50%; /* Convierte el div en un círculo */
+    color: black;
+    border: 5px solid #000000; /* Borde rojo de 2 píxeles */
+  }
+  
+  .mi-boton-personalizado {
+    width: 100px; /* Ancho en píxeles o unidades de medida */
+    height: 60px; /* Alto en píxeles o unidades de medida */
+    font-size: 40px;
+  
+  }
+  
+  
+  .play{
+    width: 90px;
+    height: 70px;
+    margin: 10px;
+    font-size: 50px;
+    background: transparent;
+  }
+  .stop{
+    width: 90px;
+    height: 70px;
+    margin: 10px;
+    font-size: 50px;
+    background: transparent;
+  }
+  .reset{
+    width: 90px;
+    height: 70px;
+    margin: 10px;
+    font-size: 50px;
+    background: transparent;
+  }
+  
+  ion-header{
+    height: 7%;
+  }
+  ion-toolbar{
+    height: 100%;
+  }
+  
+  ion-title{
+    
+    font-size: 120%;
+    position: relative;
+  top: -5px; 
+  }
+  
+  .home{
+  
+          
+    position: relative;
+  top: -5px; 
+  }
+  }

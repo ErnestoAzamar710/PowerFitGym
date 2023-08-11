@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button class="home" [routerLink]="['/gimnasio-movil',User.uid] " style="color:white !important"><i style="font-size: 150%;" class="fa-solid fa-arrow-left"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/gimnasio-movil',User.uid] "><i style="font-size: 150%; color:white !important" class="fa-solid fa-arrow-left"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Gimnasio Movil</ion-title>
   </ion-toolbar>
@@ -19,14 +19,14 @@
         <p></p>
         <ion-row>
           <ion-col>
-            <img class="ejercicio" src="https://aztethic.com/wp-content/uploads/2022/04/06621301-Push-up-m_Chest-FIX_1080.gif" alt="Ejercicio">
+            <img class="ejercicio" src="https://adictosalgym.com/wp-content/uploads/2022/03/53011301-Kettlebell-Full-Squat-from-Deficit-female_Hips_1080.gif" alt="Ejercicio">
           </ion-col>
         </ion-row>
       </div>
       <p></p>
       <ion-row>
         <ion-col>
-          <ion-button  class="mi-boton-personalizado"><i style="font-size: 120%;" class="fa-solid fa-backward"></i></ion-button>
+          <ion-button [routerLink]="['/brazo',User.uid]" class="mi-boton-personalizado"><i style="font-size: 120%;" class="fa-solid fa-backward"></i></ion-button>
         </ion-col>
         <ion-col class="timer">
           <div class="content-timer">
@@ -42,7 +42,7 @@
           </div>
         </ion-col>
         <ion-col>
-          <ion-button [routerLink]="['/brazo',User.uid]" class="mi-boton-personalizado"><i  class="fa-solid fa-forward"></i></ion-button>
+          <ion-button [routerLink]="['/abdomen',User.uid]" class="mi-boton-personalizado"><i  class="fa-solid fa-forward"></i></ion-button>
         </ion-col>
       </ion-row>
       <p></p>

@@ -1,6 +1,6 @@
 ion-title{
   font-family: "INTRO";
-  color: black;
+  color: white;
 }
 
 ion-menu::part(backdrop) {
@@ -27,7 +27,8 @@ ion-menu::part(container) {
 //Colores de las paginas
 //Color de los inputs
 ion-card{
-  background-color:#ffa858;
+  background: #D5DBDB;
+  color: black;
 }
 //fobdo del menu 
 ion-toolbar{
@@ -35,7 +36,7 @@ ion-toolbar{
 }
 //Fondo de los botones
 ion-button{
-  --background:transparent;
+  --background:black;
 }
 
 ion-menu::part(backdrop) {
@@ -85,6 +86,15 @@ font-size: 20px;
   margin: 10px;
   font-size: 50px;
   background: transparent;
+}
+.play:hover{
+  color: #566573 !important;
+}
+.stop:hover{
+  color: #566573 !important;
+}
+.reset:hover{
+  color: #566573 !important;
 }
 .stop{
   width: 80px;

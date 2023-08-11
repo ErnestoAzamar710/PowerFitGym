@@ -8,7 +8,7 @@ ion-menu::part(container) {
 }
 ion-title{
   font-family: "INTRO";
-  color: black;
+  color: white;
 }
 .logo img{
     width: 25%;
@@ -24,7 +24,14 @@ h1{
 //Colores de las paginas
 //Color de los inputs
 ion-input{
-  background-color:#f1d9b0;
+  margin-left: 20px;
+  background-color:#EAEDED;
+  width: 90% !important;
+  min-height: 50px !important;
+  font-size: 15px;
+}
+.ion-valid.sc-ion-input-md-h {
+  --highlight-color: black !important;
 }
 //fobdo del menu 
 ion-toolbar{
@@ -34,20 +41,13 @@ ion-toolbar{
 ion-content button{
   background-color:#ff9d29;
   border-style: none;
+  width: 50%;
 }  
 
 
 .logo img{
   width: 50%;
   height: 50%;
-}
-.option ion-input{
-  width: 99%;
-}
-
-//Escalada de botones 
-ion-col button{
-width: 40%;
 }
 //modo de escritorio
 @media (min-width: 600px) {
@@ -87,9 +87,10 @@ h1{
 }
 
 ion-input{
-  min-height: 40px !important;
-  font-size: 10px;
+  min-height: 45px !important;
+  font-size: 13px;
 }
+
 .takephoto button{
   height: 45px;
 }

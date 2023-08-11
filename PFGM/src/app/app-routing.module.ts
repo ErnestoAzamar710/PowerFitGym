@@ -54,7 +54,20 @@ const routes: Routes = [
   {
     path: 'iniciar-sesion',
     loadChildren: () => import('./iniciar-sesion/iniciar-sesion.module').then( m => m.IniciarSesionPageModule)
-  }
+  },
+  {
+    path: 'brazo/:uid',
+    loadChildren: () => import('./Usuario/brazo/brazo.module').then( m => m.BrazoPageModule)
+  },
+  {
+    path: 'pierna/:uid',
+    loadChildren: () => import('./Usuario/pierna/pierna.module').then( m => m.PiernaPageModule)
+  },
+  {
+    path: 'abdomen/:uid',
+    loadChildren: () => import('./Usuario/abdomen/abdomen.module').then( m => m.AbdomenPageModule)
+  },
+
 ];
 
 @NgModule({

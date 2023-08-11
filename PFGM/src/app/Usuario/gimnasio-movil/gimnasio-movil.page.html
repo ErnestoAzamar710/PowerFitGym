@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%;" class="fa-solid fa-house"></i></ion-button>
+      <ion-button class="home" [routerLink]="['/opciones-usuario',User.uid]"><i style="font-size: 150%; color:white !important" class="fa-solid fa-house"></i></ion-button>
     </ion-buttons>
     <ion-title class="text-center">Gimnasio Movil</ion-title>
   </ion-toolbar>
@@ -22,15 +22,15 @@
             <ion-button [routerLink]="['/interfaz-gimnasio-movil',User.uid]" class="btn">Pecho</ion-button>
           </ion-col>
           <ion-col>
-            <ion-button [routerLink]="['/interfaz-gimnasio-movil',User.uid]" class="btn">Brazo</ion-button>
+            <ion-button [routerLink]="['/brazo',User.uid]" class="btn">Brazo</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-button [routerLink]="['/interfaz-gimnasio-movil',User.uid]" class="btn">Pierna</ion-button>
+            <ion-button [routerLink]="['/pierna',User.uid]" class="btn">Pierna</ion-button>
           </ion-col>
           <ion-col>
-            <ion-button [routerLink]="['/interfaz-gimnasio-movil',User.uid]" class="btn">Abdomen</ion-button>
+            <ion-button [routerLink]="['/abdomen',User.uid]" class="btn">Abdomen</ion-button>
           </ion-col>
         </ion-row>
       </div>
