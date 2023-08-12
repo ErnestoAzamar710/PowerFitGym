@@ -24,12 +24,14 @@
           <br/>
           <ion-input type="password" name="txtpassword" [(ngModel)]="newUser.password" label="Password" label-placement="floating" fill="outline"></ion-input>
           <br/>
+          <ion-input type="password" name="txtpassword" [(ngModel)]="confirmaPassword" label="Confirmar Password" label-placement="floating" fill="outline"></ion-input>
+        <br/>
         </div> 
       </div>
       <div class="takephoto">
         <button class="btn btn-primary" (click)="addNewToGallery()"><ion-icon style="font-size: 200%;" name="camera-outline"></ion-icon></button>
         <p></p>
-        <img src="{{newUser.foto}}" style="width: 30%;" *ngFor="let capturedPhoto of photos" alt="Foto Usuario">
+        <img src="{{newUser.foto}}" *ngIf="newUser.foto" style="width: 30%;" alt="Foto Usuario">
       </div>
       <p></p>
       <div class="inico">

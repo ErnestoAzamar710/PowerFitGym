@@ -44,8 +44,6 @@ export class AdminUsuariosPage implements OnInit {
       loading.dismiss();
       this.USUARIOS = data;
       this.results = [...this.USUARIOS];
-      
-      console.log(data)
     }, error => {
       console.log(error);
     })
@@ -56,12 +54,10 @@ export class AdminUsuariosPage implements OnInit {
       .filter(key => this.USUARIOS[key].nombre.toLowerCase().indexOf(query) > -1)
       .map(key => this.USUARIOS[key]);
   }
-  generatePDF(uid:String) { 
-    console.log(uid);
+  generatePDF(uid:String) {
     this.database.getUser(uid).subscribe(
       async (data)=>{
         this.User=data;
-        console.log(this.User);
         let docDefinition = { 
           pageSize: 'A7', // Tamaño de página A6 (105 x 148 mm)
           pageMargins: [10, 10, 10, 10],
@@ -119,11 +115,9 @@ export class AdminUsuariosPage implements OnInit {
     );  
   }  
   async eliminarUsuario(uid:String){
-    console.log(uid);
     this.database.getUser(uid).subscribe(
       async (data)=>{
         this.User=data;
-        console.log(this.User);
         const alert = await this.alertController.create({
           header: 'Confirmación de Eliminación',
           message: `¿Desea eliminar al Usuario: ${this.User.nombre}?`,

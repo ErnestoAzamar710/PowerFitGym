@@ -30,9 +30,8 @@ export class IniciarSesionPage implements OnInit {
         const user = userCredential.user;
         const uid = user.uid;
         const uemail = user.email;
-        console.log(uid,uemail);
-        //if(uemail != "asanchezazamar@gmail.com"){
-           if(uemail != "saturving@gmail.com"){
+        if(uemail != "asanchezazamar@gmail.com"){
+           //if(uemail != "saturving@gmail.com"){
            this.router.navigate(['/opciones-usuario',uid]);
          }
          else{
@@ -75,9 +74,7 @@ export class IniciarSesionPage implements OnInit {
         const user = result.user;
         const uemail = user.email;
         const uid = user.uid;
-        console.log(uemail);
-        //if(uemail != "asanchezazamar@gmail.com"){
-          if(uemail != "saturving@gmail.com"){
+        if(uemail != "asanchezazamar@gmail.com" && uemail != "saturving@gmail.com"){
            this.router.navigate(['/opciones-usuario',uid]);
          }
          else{

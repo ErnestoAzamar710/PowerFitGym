@@ -23,7 +23,7 @@ export class AgregarUsuariosPage implements OnInit {
     foto:""
   }
   photos: String[]=[];
-
+  confirmaPassword:String="";
   constructor(public photoservices:PhotosService,
     private database:DbmongoService,
     private router:Router,
@@ -39,8 +39,6 @@ export class AgregarUsuariosPage implements OnInit {
       source: CameraSource.Camera,
       quality: 100,
     });
-    console.log(capturedPhoto); 
-    //this.newUser.foto = capturedPhoto.webPath?.replace(/^blob:/,'').toString();
     if(capturedPhoto.webPath){
       this.photos.unshift(capturedPhoto.webPath);
     }
@@ -49,53 +47,62 @@ export class AgregarUsuariosPage implements OnInit {
   }
   async crearUsuario(){
     if(this.newUser.email.toString()!="" && this.newUser.password.toString()!=""
-    && this.newUser.nombre.toString()!="" && this.newUser.foto != ""){
-      if(this.newUser.password.toString().length < 6){
+    && this.newUser.nombre.toString()!="" && this.newUser.foto != "" && this.confirmaPassword!= ""){
+      if(this.newUser.password == this.confirmaPassword){
+        if(this.newUser.password.toString().length < 6){
+          const alert = await this.alertController.create({
+            header: 'Registro de Usuario',
+            message: `La contraseña tiene que ser mayor a 6 caracteres.`,
+            buttons: ['Aceptar']
+          });
+          await alert.present();
+        }
+        else{
+          const emailU = this.newUser.email.toString();
+          const passwordU = this.newUser.password.toString();
+          createUserWithEmailAndPassword(this.auth, emailU, passwordU)
+          .then(async (userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            const uid = user.uid;
+            this.newUser.uid=uid;
+            const alert = await this.alertController.create({
+              header: 'Registro de Usuario',
+              message: `Registro exitoso.`,
+              buttons: [
+                {
+                  text: 'Aceptar',
+                  role: 'Aceptar',
+                  handler: () => {
+                    this.database.addUser(this.newUser).subscribe();
+                    this.router.navigateByUrl('/admin-usuarios');     
+                  }
+                },
+              ]
+            });
+            await alert.present();
+          })
+          .catch(async (error) => {
+            const alert = await this.alertController.create({
+              header: 'Registro de Usuario',
+              message: `Ocurrio un error en el registro, favor de intentarlo más tarde.`,
+              buttons: ['Aceptar']
+            });
+          
+            await alert.present();
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
+        }
+      }
+      else{
         const alert = await this.alertController.create({
-          header: 'Registro de Usuario',
-          message: `La constraseña tiene que ser mayor a 6 caracteres.`,
+          header: 'Editar perfil',
+          message: 'Las contraseñas introducidas no coinciden.',
           buttons: ['Aceptar']
         });
         await alert.present();
-      }
-      else{
-        const emailU = this.newUser.email.toString();
-        const passwordU = this.newUser.password.toString();
-        createUserWithEmailAndPassword(this.auth, emailU, passwordU)
-        .then(async (userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          const uid = user.uid;
-          console.log(uid);
-          this.newUser.uid=uid;
-          const alert = await this.alertController.create({
-            header: 'Registro de Usuario',
-            message: `Registro exitoso.`,
-            buttons: [
-              {
-                text: 'Aceptar',
-                role: 'Aceptar',
-                handler: () => {
-                  this.database.addUser(this.newUser).subscribe();
-                  this.router.navigateByUrl('/admin-usuarios');     
-                }
-              },
-            ]
-          });
-          await alert.present();
-        })
-        .catch(async (error) => {
-          const alert = await this.alertController.create({
-            header: 'Registro de Usuario',
-            message: `Ocurrio un error en el registro, favor de intentarlo más tarde.`,
-            buttons: ['Aceptar']
-          });
-        
-          await alert.present();
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
       }
     }
     else{

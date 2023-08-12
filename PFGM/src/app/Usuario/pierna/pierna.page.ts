@@ -112,7 +112,6 @@ export class PiernaPage implements OnInit {
     this.database.getUser(uid).subscribe(
       (data)=>{
         this.User=data;
-        console.log(this.User);
       },
       (error)=>{
         console.log(error);

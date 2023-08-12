@@ -26,8 +26,6 @@ export class PagoSuscripcionPage implements OnInit {
       loading.dismiss();
       this.USUARIOS = data;
       this.results = [...this.USUARIOS];
-      
-      console.log(data)
     }, error => {
       console.log(error);
     })

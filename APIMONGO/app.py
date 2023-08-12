@@ -12,7 +12,7 @@ client = MongoClient(mongo_db_url)
 db = client['PowerFitGym']
 
 @app.get("/users")
-def get_sensors():
+def get_users():
     users_id = request.args.get('users_id')
     filter = {} if users_id is None else {"users_id": users_id}
     sensors = list(db.users.find(filter))
@@ -22,7 +22,7 @@ def get_sensors():
     return response
 
 @app.get("/users/<id>")
-def get_sensor(id):
+def get_user(id):
     user = db.users.find_one({'_id': ObjectId(id)},{'foto':0,'uid':0,'email':0,'telefono':0,'plan':0})
     response = Response(
         response=dumps(user), status=200,  mimetype="application/json")

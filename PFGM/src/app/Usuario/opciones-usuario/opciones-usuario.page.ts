@@ -36,7 +36,6 @@ export class OpcionesUsuarioPage implements OnInit {
     this.database.getUser(uid).subscribe(
       (data)=>{
         this.User=data;
-        console.log(this.User);
       },
       (error)=>{
         console.log(error);
@@ -53,11 +52,9 @@ export class OpcionesUsuarioPage implements OnInit {
     this.router.navigate(['/ver-perfil',this.User.uid]);
   }
   generatePDF(uid:String) { 
-    console.log(uid);
     this.database.getUser(uid).subscribe(
       async (data)=>{
         this.User=data;
-        console.log(this.User);
         let docDefinition = { 
           pageSize: 'A7', // Tamaño de página A6 (105 x 148 mm)
           pageMargins: [10, 10, 10, 10],

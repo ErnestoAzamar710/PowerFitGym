@@ -58,7 +58,6 @@ export class ConfirmarPagoPage implements OnInit {
   }
   async pagado(){
     const resulado = this.MontoRecibido.valueOf() - this.selectedOptionValue.valueOf(); 
-    console.log(resulado);
     this.CambiosUser.plan = this.selectedOption;
     this.CambiosUser.estado = "ACTIVO";
     this.CambiosUser.ulDia = this.ultimoDia.toString();
@@ -72,22 +71,18 @@ export class ConfirmarPagoPage implements OnInit {
       if(díap < 10){
         const dia = "0"+díap;
         fActual = año+"-"+mes+"-"+díap;
-        console.log(fActual);
       }
       else{
         fActual = año+"-"+mes+"-"+díap;
-        console.log(fActual);
       }
     }
     else{
       if(díap < 10){
         const dia = "0"+díap;
         fActual = año+"-"+mesp+"-"+dia;
-        console.log(fActual);
       }
       else{
         fActual = año+"-"+mesp+"-"+díap;
-        console.log(fActual);
       }
     }
     this.CambiosUser.ulPago = fActual;
@@ -106,7 +101,6 @@ export class ConfirmarPagoPage implements OnInit {
           text: 'Aceptar',
           handler: () => {
             const uidACT = this.User.uid.toString();
-            console.log(uidACT);
             this.actualizarDatos(uidACT);
 
           }
@@ -121,7 +115,6 @@ export class ConfirmarPagoPage implements OnInit {
     this.database.getUser(uid).subscribe(
       (data)=>{
         this.User=data;
-        console.log(this.User);
       },
       (error)=>{
         console.log(error);
@@ -132,7 +125,6 @@ export class ConfirmarPagoPage implements OnInit {
     let url = this.router.url
     let arr = url.split("/",3)
     let uid = (arr[2])
-    console.log(uid)
     return uid
   }
   actualizarDatos(uid:String){
