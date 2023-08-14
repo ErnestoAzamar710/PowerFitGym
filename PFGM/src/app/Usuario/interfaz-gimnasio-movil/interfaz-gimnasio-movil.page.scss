@@ -11,10 +11,6 @@ ion-menu::part(container) {
     border-radius: 0 20px 20px 0;
     box-shadow: 4px 0px 16px rgba(24, 21, 24, 0.5);
 }
-.logo img{
-    width: 25%;
-    height: 25%;
-}
 .btn{
   width: 100%;
   color: white;
@@ -64,7 +60,9 @@ font-size: 20px;
   height: 50%;
 }
 
-
+.ejercicio{
+  width: 70%;
+}
 
 .content-m{
   display: grid; /* Activa el grid layout en el contenedor */

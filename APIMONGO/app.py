@@ -5,9 +5,8 @@ from pymongo import MongoClient
 from bson.json_util import dumps
 from bson import ObjectId
 app = Flask(__name__)
-#mongodb+srv://ernestoazamar710:JSDrzGJYLoWQcVAG@cluster0.qlbyai3.mongodb.net/?retryWrites=true&w=majority
 mongo_db_url = os.environ.get("mongodb://localhost:27017")
-#mongo_db_url = "mongodb+srv://ernestoazamar710:JSDrzGJYLoWQcVAG@cluster0.qlbyai3.mongodb.net/?retryWrites=true&w=majority"
+#mongo_db_url = "mongodb+srv://ernesto:5pxxRajieMqw2RYw@cluster0.evjggq7.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(mongo_db_url)
 db = client['PowerFitGym']
 
