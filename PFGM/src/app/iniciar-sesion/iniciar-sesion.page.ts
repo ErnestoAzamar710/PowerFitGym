@@ -30,8 +30,7 @@ export class IniciarSesionPage implements OnInit {
         const user = userCredential.user;
         const uid = user.uid;
         const uemail = user.email;
-        if(uemail != "asanchezazamar@gmail.com"){
-           //if(uemail != "saturving@gmail.com"){
+        if(uemail != "asanchezazamar@gmail.com" && uemail != "saturving@gmail.com"){
            this.router.navigate(['/opciones-usuario',uid]);
          }
          else{

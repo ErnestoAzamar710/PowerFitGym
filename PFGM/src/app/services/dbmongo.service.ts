@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DbmongoService {
-
-  url = "http://localhost:4000/users";
+  //Cambia el URL por tu dirección ip Actual.
+  url = "http://192.168.1.72:4000/users";
 
   constructor(private http: HttpClient) { }
   

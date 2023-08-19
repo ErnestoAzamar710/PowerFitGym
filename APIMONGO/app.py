@@ -14,10 +14,10 @@ db = client['PowerFitGym']
 def get_users():
     users_id = request.args.get('users_id')
     filter = {} if users_id is None else {"users_id": users_id}
-    sensors = list(db.users.find(filter))
+    users = list(db.users.find(filter))
 
     response = Response(
-        response=dumps(sensors), status=200,  mimetype="application/json")
+        response=dumps(users), status=200,  mimetype="application/json")
     return response
 
 @app.get("/users/<id>")

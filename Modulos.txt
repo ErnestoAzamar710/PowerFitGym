@@ -3,3 +3,9 @@ npm i @angular-devkit/build-angular --force
 
 Linea para generar qr y el uso de la camara del dispositivo
 npm install angularx-qrcode @capacitor/camera @capacitor/preferences @capacitor/filesystem @ionic/pwa-elements --save
+
+Comentarios
+En el archivo dbmongo.services que esta en la carpeta "services"
+Cambia el URL por tu dirección ip Actual.
+url = "http://(tu-dirección-ip):4000/users";
+
